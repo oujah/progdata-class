@@ -7,3 +7,8 @@ month <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul")
 calender <- cbind(week, month)
 
 calender
+
+x <- 3
+y <- 5
+
+x+y
