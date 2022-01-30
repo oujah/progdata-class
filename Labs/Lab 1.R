@@ -25,10 +25,10 @@ table(penguins$species) # Exploring the different species of penguins in the dat
 
 table(penguins$sex) # Exploring the sex of the penguins
 
-mean(penguins$body_mass_g, na.rm = T)
+mean(penguins$body_mass_g, na.rm = T) # Calculating the mean body mass for the pendguins
 
-male.peng <- penguins[penguins$sex=="male",]
+male.peng <- penguins[penguins$sex=="male",] # Creating a new data set containing male penguins
 
-subset(penguins, select=c("species","island", "body_mass_g"))
+subset(penguins, select=c("species","island", "body_mass_g")) # Creating a new data set that contains the variables species, island and body mass of the penguins
 
        
