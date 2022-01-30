@@ -6,7 +6,9 @@ library(palmerpenguins)
 
 # Part 3: Practice some R functions
 #-----------------------------------
-summary(penguins) # Gives a general overview of the data set and the characteristics of the variables
+str(penguins) # Gives a general overview of the data set and the characteristics of the variables
+
+summary(penguins) # Provides summary statistics for variables in the data set
 
 head(penguins) # Exploring the first 6 observations of the data set
 
