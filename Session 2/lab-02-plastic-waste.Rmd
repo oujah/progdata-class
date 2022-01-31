@@ -9,26 +9,58 @@ output: html_document
 
 ```{r setup, message=FALSE}
 # Load the tidyverse package
+library(tidyverse)
 ```
 
 ```{r load-data, message=FALSE}
-plastic_waste <- read.csv(here::here("data/plastic-waste.csv"))
+plastic_waste <- plastic_waste <- read.csv("C:/Users/Otobo/GitHub/progdata-class/data/data.csv")
+
 ```
 
 ## Exercises
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
+Overall, the plastic waste per capita for countries in all continents were less than 1.0 kg per person with exception of North America where at least one country (Trinidad and Tobago) had a plastic waster per capita that great greater than 3.0kg per person.
 
 ```{r plastic-waste-continent}
-# insert code here
+#1
+ggplot(plastic_waste) +
+  aes(x = plastic_waste_per_cap) +
+  geom_histogram(binwidth = 0.2) +
+  facet_wrap(~continent)
+
+ggplot(plastic_waste) +
+  aes(x = plastic_waste_per_cap) +
+  geom_density(binwidth = 0.2) +
+  facet_wrap(~continent)
+
+
+ggplot(plastic_waste) +
+  aes(x = plastic_waste_per_cap) +
+  geom_histogram(binwidth = 0.2) +
+  geom_density(aes(y = after_stat(count)), binwidth = 0.2) +
+  facet_wrap(~continent)
+
+#2.
+ggplot(plastic_waste) +
+  aes(x= plastic_waste_per_cap, color = continent) + 
+  geom_density()
+
+
+ggplot(plastic_waste) +
+  aes(x= plastic_waste_per_cap, color = continent, fill = continent, , alpha = 0.5) + 
+  geom_density(alpha = 0.6)
+
+# 3. 
+# We defined color and fill of curves by mapping to the aesthetics to ensure that the boundaries for each continent have unique colors and the spaces with thin them are filled with the respective colors. However, we define alpha level to the geom to alter the level of opacity/transparency for each  boundary in order to make them distinguishable
 ```
+
 
 ### Exercise 2
 
 ```{r plastic-waste-density}
-# insert code here
+
 ```
 
 ### Exercise 3
