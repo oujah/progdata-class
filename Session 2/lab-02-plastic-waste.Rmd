@@ -53,7 +53,7 @@ ggplot(plastic_waste) +
   geom_density(alpha = 0.6)
 
 # 3. 
-# We defined color and fill of curves by mapping to the aesthetics to ensure that the boundaries for each continent have unique colors and the spaces with thin them are filled with the respective colors. However, we define alpha level to the geom to alter the level of opacity/transparency for each  boundary in order to make them distinguishable. Applying the alpha level to the aes() in this case doesn't result in the desired change in color.
+# We defined color and fill of curves by mapping to the aesthetics to ensure that the boundaries for each continent have unique colors and the spaces within them are filled with the respective colors. However, we define alpha level to the geom to alter the level of opacity/transparency for each  boundary in order to make them distinguishable. Applying the alpha level to the aes() in this case doesn't result in the desired change in color.
 ```
 
 
