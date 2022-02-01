@@ -309,4 +309,6 @@ ggplot(penguins) +
   geom_smooth() +
   theme_bw() +
   theme(legend.position = "bottom")
-|> 
+
+
+
