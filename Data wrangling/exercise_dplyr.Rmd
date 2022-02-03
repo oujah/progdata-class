@@ -116,22 +116,22 @@ gapminder |>
 1. Only keep data with population greater than 100 million.
 
 ```{r}
-gapminder |>
-  filter(FILL_THIS_IN)
+  gapminder |> filter(pop >100000000)
 ```
 
 2. Only keep data _from Asia_ with population greater than 100 million.
 
 ```{r}
-gapminder |>
-  filter(FILL_THIS_IN)
+gapminder |> filter(pop >100000000 & continent =="Asia")
 ```
 
 3. Only keep data _from the countries Brazil and China_ with population greater than 100 million.
 
 ```{r}
-gapminder |>
-  filter(FILL_THIS_IN)
+gapminder |>filter(pop >100000000) |> filter(country=="Brazil"|country=="China")
+
+gapminder |> 
+  filter(country %in% c("China", "Brazil") & pop >100000000)
 ```
 
 
@@ -152,8 +152,9 @@ Let's get:
 - `gdpBill`: GDP in billions, rounded to two decimals.
 
 ```{r}
-gapminder |>
-  mutate(FILL_THIS_IN)
+mutate(gapminder,
+       grossGDP = gdpPercap * pop,
+       gdpBill = round(grossGDP/1000000000,2))
 ```
 
 Notice the backwards compatibility! No need for loops!
