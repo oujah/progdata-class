@@ -1,20 +1,41 @@
-seq(1:7)
+1 + 2
 
-week <- seq(1:7)
+4/2
 
-month <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul")
+(2 + 2) *3
 
-calender <- cbind(week, month)
+class(4)
 
-calender
+class(4L)
 
-x <- 3
-y <- 5
+4%/%3
 
-x+y
+5%%3
 
-getwd()
+5%/%3
+
+2**3
+
+2^3
+
+3*2
+
+3**3
+
+"String"
 
 
-library(dplyr)
-dplyr
+
+x <-  2
+
+x
+
+
+1:100
+
+
+length("air")
+
+length(c("air", "force"))
+
+length(c("air", "force", "one"))
