@@ -101,3 +101,36 @@ penguins |> ggplot(aes( x =  body_mass_g, y=  bill_length_mm)) +
        title = "Scatterplot of Body mass and Bill length for Penguins")
 ```
 
+Ex 2.2: Exploring Categorical and Continous variable
+```{r}
+penguins |>
+  group_by(species) |>summarise(n = n())
+
+
+penguins |>
+  group_by(species) |> ggplot(aes(x = species, y = body_mass_g, color = species)) +
+  geom_boxplot() +
+  geom_point()+  
+  geom_jitter() +
+  geom_density()+
+  labs( x = "Species of Penguins", 
+        y = "Body Mass of Pendguins (g)",
+        title = "Boxplot showing Body masses of Penguins by Species")
+
+```
+
+
+24.4 Bonus Exercise 
+ 
+This code **filter(gapminder, country == c("Rwanda", "Afghanistan"))**` not not return the desired out. The assumption/rationale for this code was to subaset the data set to include countries containing only Rwanda and Afghanistan. However when run, the code gives a different output. It shows only a total of 12 observations (6 observations for Rwanda and 6 for Afghanistan) as shown below
+```{r}
+filter(gapminder, country == c("Rwanda", "Afghanistan")) 
+```
+
+The correct syntax that would return the desired output is **filter(gapminder, country == "Rwanda"| country == "Afghanistan")**. By running this code, the correct output is displayed as shown below 
+
+```{r}
+filter(gapminder, country == "Rwanda"|country == "Afghanistan") 
+```
+
+
