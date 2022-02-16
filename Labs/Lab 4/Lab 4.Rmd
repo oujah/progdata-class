@@ -1,0 +1,22 @@
+---
+title: "Lab 04"
+author: "Otobo Ujah"
+date: "2/10/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+dictionary <- readr::read_csv("C:/Users/Otobo/GitHub/progdata-class/data/green_dictionary.csv")
+green_data <- readr::read_csv("C:/Users/Otobo/GitHub/progdata-class/data/green_data.csv")
+```
+
+1. Exploring item responses
+
+```{r}
+green_data|>summarise(
+  mean = mean(green1 , na.rm = T),
+  sd = sd(green1,na.rm = T)
+)
+
+```
