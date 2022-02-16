@@ -162,8 +162,9 @@ Notice the backwards compatibility! No need for loops!
 Try the same thing, but with `transmute` (drops all other variables). 
 
 ```{r}
-gapminder |>
-  transmute(FILL_THIS_IN)
+transmute(gapminder,
+       grossGDP = gdpPercap * pop,
+       gdpBill = round(grossGDP/1000000000,2))
 ```
 
 The `if_else` function is useful for changing certain elements in a data frame.
@@ -171,8 +172,10 @@ The `if_else` function is useful for changing certain elements in a data frame.
 Example: Suppose Canada's 1952 life expectancy was mistakenly entered as 68.8 in the data frame, but is actually 70. Fix it using `if_else` and `mutate`. 
 
 ```{r}
-gapminder |>
-  mutate(FILL_THIS_IN)
+gapminder |> mutate(
+  lifeExp = if_else(country=="Canada" & year ==1952, 
+                    true = 70,
+                    false = lifeExp))
 ```
 
 Your turn: 
@@ -247,9 +250,8 @@ Let's head back to the main group.
 Like `mutate()`, `summarize()` will compute a new column, but each column needs to reduce to a **single value**.
 
 ```{r}
-gapminder |> 
-  summarize(mu = mean(lifeExp),
-            sigma = sd(lifeExp))
+gapminder |> summarise(mean(lifeExp),
+                       sd(lifeExp))
 ```
 
 This is most useful if combined with `group_by()`.
