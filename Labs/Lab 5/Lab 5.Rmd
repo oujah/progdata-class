@@ -1,0 +1,36 @@
+---
+title: "Lab 5"
+author: "Otobo Ujah"
+date: "2/24/2022"
+output: html_document
+---
+
+```{r }
+
+library(tidyverse)
+
+lotr  <- read_csv("https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/lotr_tidy.csv") |> rename(Species = Race)
+
+```
+
+1. I would say this data is in the tidy format
+
+2. Widen data showing spoken words by species
+
+```{r}
+
+(lotr_wider <- lotr |> pivot_wider(id_col = c(Film, Gender),
+                                  names_from = Species,
+                                  values_from = Words))
+```
+
+
+3. Re-lengthen the wide LOTR from Question 2 above
+
+```{r}
+lotr.longer <-  lotr_wider |> pivot_longer(cols = c(-Film, - Gender),
+                                           names_to = "Species",
+                                           values_to = "Words")
+lotr.longer
+```
+
