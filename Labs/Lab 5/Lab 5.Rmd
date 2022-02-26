@@ -84,3 +84,6 @@ w2.miss <- family_longest|>filter(wave=="w2" & is.na(score)==T) |> count(family_
 
 ```
 
+```
+It is easier to find missing data in the long format than in the wide format because all the data for the waves (w1 and w2) are contained in different colomns of the data set.
+
