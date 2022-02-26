@@ -34,3 +34,53 @@ lotr.longer <-  lotr_wider |> pivot_longer(cols = c(-Film, - Gender),
 lotr.longer
 ```
 
+#### LAB 5B Multivariate pivoting
+
+```{r}
+library(tidyverse)
+set.seed(123)
+missing_w2_parent <- sample(1:500, 30)
+missing_w2_child <- c(missing_w2_parent[1:5], sample(1:500, 25))
+family  <- read_csv(
+  "https://raw.githubusercontent.com/bwiernik/progdata/main/inst/tutorials/data/family_data.csv"
+) |> 
+  mutate(
+    across(
+      starts_with("w2") & contains("parent"),
+      ~ ifelse(family_id %in% missing_w2_parent, NA_real_, .x)
+    ),
+    across(
+      starts_with("w2") & contains("child"),
+      ~ ifelse(family_id %in% missing_w2_child, NA_real_, .x)
+    )
+  )
+
+library(tidyverse)
+
+family 
+
+family_longest <- family |> pivot_longer(cols = !family_id,
+                                   values_to = "score",
+                                   names_to = c("wave", "scale","family_member"),
+                                   names_sep = "_")
+
+
+print(family_longest)
+
+family_long <- family |> pivot_longer(cols = !family_id,
+                                      names_to = c("wave",".value", "family_member"),
+                                      names_sep = "_")
+                                      
+                                      
+family_long
+
+
+```
+
+3. Families for which w2 data is missing for at least 1 person
+
+```{r}
+w2.miss <- family_longest|>filter(wave=="w2" & is.na(score)==T) |> count(family_id)
+
+```
+
