@@ -1,0 +1,31 @@
+---
+title: "Table joins"
+author: "Otobo Ujah"
+date: "2/24/2022"
+output: html_document
+---
+```{r}
+songs <- read_csv("https://raw.githubusercontent.com/bwiernik/progdata-class/master/data/singer/songs.csv")
+locations <- read_csv("https://raw.githubusercontent.com/bwiernik/progdata-class/master/data/singer/loc.csv")
+
+(time <- as_tibble(songs) |> 
+    rename(song = title))
+
+(album <- as_tibble(locations) |> 
+    select(title, everything()) |> 
+    rename(album = release,
+           song  = title))
+```
+
+Q1.
+
+```{r}
+time|>left_join(album, by = c("song", "artist_name"))
+```
+
+Q2.
+
+```{r}
+
+```
+
