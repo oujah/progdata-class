@@ -26,7 +26,7 @@ _______
 Lab 05 Review
 _____
 9. https://github.com/tinale9/ProgDataClass/issues/6
-10. 
+10. https://github.com/cassrichardson/progdata-class/issues/5
 
 Lab 06 Review
 _____
