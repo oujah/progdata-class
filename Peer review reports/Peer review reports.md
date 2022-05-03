@@ -30,5 +30,5 @@ _____
 
 Lab 06 Review
 _____
-11.
-12. 
+11. https://github.com/KiprasVarkala/progdata-class/issues/6
+12. https://github.com/priyacollins/progdata-class/issues/7
