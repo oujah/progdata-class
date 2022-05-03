@@ -21,3 +21,14 @@ ________
 Lab 04 Review
 _______
 7. https://github.com/avenetto/progdata-class/issues/3
+8. https://github.com/jayschmidtavendano/progdata-class/issues/8
+
+Lab 05 Review
+_____
+9. https://github.com/tinale9/ProgDataClass/issues/6
+10. 
+
+Lab 06 Review
+_____
+11.
+12. 
